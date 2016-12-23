@@ -9,13 +9,13 @@ University of Pennsylvania
 There are two main parts related to the mail server design and implementation, which are client-mail server communication and mail server-backend server communication. 
 In html pages related to mail server, the browser passes a command with a corresponding action name, attribute values, and the current username to the mail server. After parsing this command, mail server sets up a socket connection with the corresponding back-end storage server and uses the protocol defined in the project description (PUT, GET...) to perform actions.  
 After getting responses from its backend server, the mail server calls a function to create a dynamic html page and returns it to the browser for displaying. 
-Basic functions provided by the mail server are: 
-	1. List all the email for the current user (ALLMAIL command)
-	2. Compose new email (PUT command)
-	3. Viewing certain email details of the current user (GET command) 
-	4. Replying to a certain email (PUT command) 
-	5. Forwarding a certain email (PUT command) 
-	6. Deleting a certain email (Delete command). 
+Basic functions provided by the mail server are:  
+	1. List all the email for the current user (ALLMAIL command)  
+	2. Compose new email (PUT command)  
+	3. Viewing certain email details of the current user (GET command)  
+	4. Replying to a certain email (PUT command)  
+	5. Forwarding a certain email (PUT command)  
+	6. Deleting a certain email (Delete command)  
 
 
 ## Frontend Server
@@ -56,17 +56,17 @@ Both the master and servers use multi-thread approach. Upon receiving request, i
 They together forms a distributed storage system that provides service of key-value storage.
 
 The command (API) that the master provides are:
-	1. REQUEST command. The basic assumption master makes is that the user column in this command has already been created. Otherwise it will give an error message to the frontend server. It provides the server ID that corresponding to that user.
-	2. CREATE command. When the frontend server want to create a new account for a user, it issues a create command to master. The master do load-balancing based on the existing account numbers on each of the servers it keeps track of. It then provides the frontend server with the server that has the least content stored.
-	3. ALIVE command. Note that the master itself is also a server that we want to know the current status (dead or alive).
+	1. REQUEST command. The basic assumption master makes is that the user column in this command has already been created. Otherwise it will give an error message to the frontend server. It provides the server ID that corresponding to that user.  
+	2. CREATE command. When the frontend server want to create a new account for a user, it issues a create command to master. The master do load-balancing based on the existing account numbers on each of the servers it keeps track of. It then provides the frontend server with the server that has the least content stored.  
+	3. ALIVE command. Note that the master itself is also a server that we want to know the current status (dead or alive).  
 
 The command the storage server provides are:
-	1. PUT command. Put the data corresponding to the user and file name specified. Note that it is also used by the frontend server to create folders and store emails.
-	2. GET command. Get the data corresponding to the user and file name specified. Note that it is also possible that the value returned is the folder and the files contained in that path if that path is a folder instead of a file name.
-	3. CPUT. It replaces the old version content by newer version provided the user know what the older version is. It is used in situations such as changing passwords.
-	4. DELETE command. The delete command will first mark the files as deleted. When the deleted files have accumulated to a certain number, it flushes the files and do the real deletion. This saves space by eliminating fragments in the disk.
-	5. RENAME or MOVE. This command enables the frontend server to change the name of the files or move the path.
-	6. ALLMAIL command. This command provides the email server with all the mail name of the user it specifies. 
-	7. RAW command. In the console we want to see the data stored on each of the node. So RAW will enable the frontend server see the data.
-	8. ALLPATH. Returns all the path of that user.
-	9. ALIVE. Sends the heartbeat message.
+	1. PUT command. Put the data corresponding to the user and file name specified. Note that it is also used by the frontend server to create folders and store emails.  
+	2. GET command. Get the data corresponding to the user and file name specified. Note that it is also possible that the value returned is the folder and the files contained in that path if that path is a folder instead of a file name.  
+	3. CPUT. It replaces the old version content by newer version provided the user know what the older version is. It is used in situations such as changing passwords.  
+	4. DELETE command. The delete command will first mark the files as deleted. When the deleted files have accumulated to a certain number, it flushes the files and do the real deletion. This saves space by eliminating fragments in the disk.  
+	5. RENAME or MOVE. This command enables the frontend server to change the name of the files or move the path.  
+	6. ALLMAIL command. This command provides the email server with all the mail name of the user it specifies.  
+	7. RAW command. In the console we want to see the data stored on each of the node. So RAW will enable the frontend server see the data.  
+	8. ALLPATH. Returns all the path of that user.  
+	9. ALIVE. Sends the heartbeat message.  
