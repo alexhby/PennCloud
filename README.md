@@ -2,7 +2,7 @@
 A distributed Cloud Drive and Mail Service Application
 
 ## Team
-[Boyi He](https://github.com/alexhby), Yizhou Luo, Zhiyu Ma, Zhenghao Yang  
+[Boyi He](https://github.com/alexhby), [Yizhou Luo](https://github.com/ZhouGongZi), Zhiyu Ma, Zhenghao Yang  
 University of Pennsylvania
 
 ## Email Feature
