@@ -27,3 +27,6 @@
 *.exe
 *.out
 *.app
+
+# Ingore .DS_Store
+.DS_Store
