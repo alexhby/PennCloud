@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>My Drive - PennCloud</title>
+</head>
+
+<body>
+	<h1>PennCloud Drive</h1>
+
+	<b> Current path: /</b><br><br>
+
+	<b>Folders:</b><br>
+	<table cellspacing="12">
+	<tr><th>Name</th><th>Delete</th></tr>
+
+	<tr><td>
+	<a href="#"><img src="folder-icon.png" alt="folder" style="width:20px;height:20px;">folder1</a>
+	</td>
+
+	<td>
+		<form action="/delete" method="post">
+		  	<button name="delete" value="drive/#file2">Delete</button>
+		</form>
+	</td>
+	</tr>
+
+	<tr><td>
+	<a href="#"><img src="folder-icon.png" alt="folder" style="width:20px;height:20px;">folder2</a>
+	</td>
+
+
+		<td>
+		<form action="/delete" method="post">
+		  	<button name="delete" value="drive/#file2">Delete</button>
+		</form>
+	</td></tr>
+
+	</table>
+	<br><br>
+
+	<b>Files:</b><br>
+
+	<table cellspacing="12">
+	<tr>
+		<th>Name</th>
+		<th>Rename</th>
+		<th>Move to</th>
+		<th>Delete</th>
+	</tr>
+	<tr>
+	<td>
+		<a href="#"><img src="file-icon.png" alt="file" style="width:20px;height:20px;">file1</a>
+	</td>
+
+	<td>
+		<form action="/rename" method="post">
+		  	<input type="text" name="d>#file1" placeholder="Enter new name" required>
+		  <input type="submit" value="Rename">
+		</form>
+	</td>
+
+	<td>
+		<form action="/move" method="post">
+		  	<select name="d>#file1">
+			  <option value="d>$path1">/path1</option>
+			  <option value="d>$path2>$path3">/path2/path3</option>
+			</select>
+		  <input type="submit" value="Move">
+		</form>
+	</td>
+	<td>
+		<form action="/delete" method="post">
+		  	<button name="delete" value="d/#file1">Delete</button>
+		</form>
+	</td>
+
+	</tr>
+
+	<tr>
+	<td>
+		<a href="#"><img src="file-icon.png" alt="file" style="width:20px;height:20px;">file2</a>
+	</td>
+
+	<td>
+		<form action="/rename" method="post">
+		  	<input type="text" name="rename" placeholder="Enter new name" required>
+		  <input type="submit" value="Rename">
+		</form>
+	</td>
+	<td>
+		<form action="/move" method="post">
+		  	<select name="d>#file2">
+			  <option value="d>$path1">/path1</option>
+			  <option value="d>$path2>$path3">/path2/path3</option>
+			</select>
+		  <input type="submit" value="Move">
+		</form>
+	</td>
+	<td>
+		<form action="/delete" method="post">
+		  	<button name="delete" value="drive/#file2">Delete</button>
+		</form>
+	</td>
+
+	</tr>
+		
+
+	</table>
+
+	<br><table><tr><td><b>Add new file:</b></td><td></td></tr>
+	<tr><td><form name="input" action="/newfile" method="post">
+		<input type="file" name="newfile" required></td>
+	  	<td><input type="submit" value="Upload"></form></td></tr>
+
+	<tr><td><b>Add new folder:</b></td><td></td></tr>
+	<tr><td><form name="input" action="/newfolder" method="post">
+  		<input type="text" name="foldername" placeholder="Enter folder name" size="25" required></td>
+  		<td><input type="submit" value="Submit">
+	</form></td></tr></table>
+
+	<br>
+	<a href="/emails">Mailbox</a><br>
+	<a href="/">Homepage</a>
+
+</body>
+</html>

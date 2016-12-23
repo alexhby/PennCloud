@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>PennCloud - Admin</title>
+   </head>
+   <body>
+      <h1>Admin Console</h1>
+      <b>Frontend Servers</b><br>
+      <table>
+         <tr align="left">
+            <th>Address</th>
+            <th>Status</th>
+         </tr>
+         <tr>
+            <td>127.0.0.1:8000</td>
+            <td>Down</td>
+         </tr>
+         <tr>
+            <td>127.0.0.1:8001</td>
+            <td>Alive</td>
+         </tr>
+      </table>
+      <br><b>Backend Servers</b><br>
+      <table>
+         <tr align="left">
+            <th>Address</th>
+            <th>Status</th>
+         </tr>
+         <tr>
+            <td>127.0.0.1:8000</td>
+            <td>Down</td>
+         </tr>
+         <tr>
+            <td>
+               <form action="/checkBS" method="post"><button name="1">127.0.0.1:8001</button></form>
+            </td>
+            <td>Alive</td>
+         </tr>
+      </table>
+      <br><a href="/logout">Logout</a>
+   </body>
+</html>

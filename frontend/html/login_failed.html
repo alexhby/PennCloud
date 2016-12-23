@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Login</title>
+</head>
+
+<body>
+<center>
+	<h1>Login to PennCloud</h1>
+
+	<font color="red">Incorret username or password. Please try again.</font><br><br>
+
+	<form name="input" action="/checklogin" method="post">
+  		Username:<br>
+  		<input type="text" name="user" required>
+  		<br>
+  		Password:<br>
+  		<input type="password" name="pass" required>
+  		<br><br>
+  		<input type="submit" value="Log in">
+	</form>
+	<br>
+
+	<a href="/html/signup.html">Sign up</a><br>
+
+</center>
+</body>
+</html>

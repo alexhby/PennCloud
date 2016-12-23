@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>PennCloud - Settings</title>
+</head>
+
+<body>
+<center>
+	<h1>PennCloud - Settings</h1>
+
+	<h3>Change Password</h3>
+
+	<font color="red">Invalid current password or new password. Please try again.</font><br><br>
+	<form name="input" action="/changepass" method="post">
+  		Current password:<br>
+  		<input type="password" name="oldpass" required>
+  		<br>New password:<br>
+  		<input type="password" name="newpass" required>
+  		<br><br>
+  		<input type="submit">
+	</form>
+
+	<br><a href="/html/home.html">Back to Home</a>
+
+</center>
+</body>
+</html>
