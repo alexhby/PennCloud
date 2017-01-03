@@ -5,6 +5,18 @@ A distributed Cloud Drive and Mail Service Application
 [Boyi He](https://github.com/alexhby), [Yizhou Luo](https://github.com/ZhouGongZi), Zhiyu Ma, Zhenghao Yang  
 University of Pennsylvania
 
+## Getting Started
+To compile, run 'make' in both 'frontend' and 'backend' folders.  
+  
+To start the backend servers, go to /backend and then:  
+* Run master with ./master -p 0 -v  
+* Run the server nodes with ./storageNode -p 1 -v  
+(the number after -p is the index of the server address and port number in the servers.txt. If you want to open more nodes, you can simply change -p 1 to -p 2 or -p 3, etc.)  
+  
+To start the frontend servers, please go to frontend folder and then:  
+* run frontend server with ./frontend -p 0  
+(the -p option is the same as it is in the backend server)  
+
 ## Email Feature
 There are two main parts related to the mail server design and implementation, which are client-mail server communication and mail server-backend server communication. 
 In html pages related to mail server, the browser passes a command with a corresponding action name, attribute values, and the current username to the mail server. After parsing this command, mail server sets up a socket connection with the corresponding back-end storage server and uses the protocol defined in the project description (PUT, GET...) to perform actions.  
